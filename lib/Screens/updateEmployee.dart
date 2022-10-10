@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
+//import 'package:charts_flutter/flutter.dart' as charts;
 
 // ############################################################################
 // ############################################################################
@@ -28,23 +28,23 @@ class PieChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<BarChartModel> data = [
-      BarChartModel(
-        eventType: "Working",
-        time: int.parse(totalWorkTime),
-        color: charts.ColorUtil.fromDartColor(Colors.blue),
-      ),
-      BarChartModel(
-        eventType: "Meeting",
-        time: int.parse(totalMeetingTime),
-        color: charts.ColorUtil.fromDartColor(Colors.green),
-      ),
-      BarChartModel(
-        eventType: "Not Working",
-        time: int.parse(totalBreakTime),
-        color: charts.ColorUtil.fromDartColor(Colors.red),
-      ),
-    ];
+    // final List<BarChartModel> data = [
+    //   BarChartModel(
+    //     eventType: "Working",
+    //     time: int.parse(totalWorkTime),
+    //     color: charts.ColorUtil.fromDartColor(Colors.blue),
+    //   ),
+    //   BarChartModel(
+    //     eventType: "Meeting",
+    //     time: int.parse(totalMeetingTime),
+    //     color: charts.ColorUtil.fromDartColor(Colors.green),
+    //   ),
+    //   BarChartModel(
+    //     eventType: "Not Working",
+    //     time: int.parse(totalBreakTime),
+    //     color: charts.ColorUtil.fromDartColor(Colors.red),
+    //   ),
+    // ];
     Map<String, double> dataMap_ThatDay = {
       "Meeting": double.parse(totalMeetingTime),
       "Break": double.parse(totalBreakTime),
@@ -56,15 +56,15 @@ class PieChatPage extends StatelessWidget {
       "Work": double.parse(ptotalWorkTime),
     };
 
-    List<charts.Series<BarChartModel, String>> series = [
-      charts.Series(
-        id: "time",
-        data: data,
-        domainFn: (BarChartModel series, _) => series.eventType,
-        measureFn: (BarChartModel series, _) => series.time,
-        colorFn: (BarChartModel series, _) => series.color,
-      ),
-    ];
+    // List<charts.Series<BarChartModel, String>> series = [
+    //   charts.Series(
+    //     id: "time",
+    //     data: data,
+    //     domainFn: (BarChartModel series, _) => series.eventType,
+    //     measureFn: (BarChartModel series, _) => series.time,
+    //     colorFn: (BarChartModel series, _) => series.color,
+    //   ),
+    // ];
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -103,13 +103,13 @@ class PieChatPage extends StatelessWidget {
               Divider(
                 color: Colors.black,
               ),
-              Container(
-                height: 350,
-                child: charts.BarChart(
-                  series,
-                  animate: true,
-                ),
-              )
+              // Container(
+              //   height: 350,
+              //   child: charts.BarChart(
+              //     series,
+              //     animate: true,
+              //   ),
+              // )
             ],
           ),
         ),
